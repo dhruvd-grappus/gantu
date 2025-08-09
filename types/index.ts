@@ -1,4 +1,4 @@
-export interface TripCard {
+export interface Trip {
   id: string;
   title: string;
   image: string;
@@ -11,3 +11,6 @@ export interface TripCard {
   idealFor: string;
   features: string[];
 }
+
+// Keep TripCard as an alias for backward compatibility
+export type TripCard = Trip;

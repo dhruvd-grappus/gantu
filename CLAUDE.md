@@ -58,3 +58,4 @@ This is an Expo React Native application called "Gantu" built with:
 - always use tailwind
 - always use accurate sizes/constraints/fonts/colors/icons or images when implementing a figma design
 - always check for fonts while implementing from figma, install new fonts if you want
+- dont ever run npm expo start or anything related

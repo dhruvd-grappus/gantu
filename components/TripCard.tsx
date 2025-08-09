@@ -1,19 +1,19 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import type { TripCard } from '../types';
+import type { Trip} from '../types';
 
 interface TripCardProps {
-  trip: TripCard;
+  trip: Trip;
   onPress?: () => void;
 }
 
-export default function TripCard({ trip, onPress }: TripCardProps) {
+const TripCard = memo(function TripCard({ trip, onPress }: TripCardProps) {
   return (
     <TouchableOpacity
       accessibilityRole="button"
       onPress={onPress}
-      className="bg-white rounded-[20px] px-[5px] pt-[5px] pb-5 w-[280px] shadow-lg"
+      className="bg-white rounded-[20px] px-[5px] pt-[5px] pb-5 w-[280px] min-h-[400px] shadow-lg"
       style={{
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 4 },
@@ -69,7 +69,7 @@ export default function TripCard({ trip, onPress }: TripCardProps) {
                 </View>
 
                 <View className="bg-[#F3F6F8] rounded-[9px] pl-2 pr-3 py-1.5 flex-row items-center gap-1.5">
-                  <Ionicons name="star" size={18} color="white" />
+                  <Ionicons name="star" size={18} color="gold" />
                   <Text
                     className="font-inter-display text-xs font-semibold text-black uppercase"
                     style={{ letterSpacing: 1 }}
@@ -122,4 +122,6 @@ export default function TripCard({ trip, onPress }: TripCardProps) {
       </View>
     </TouchableOpacity>
   );
-}
+});
+
+export default TripCard;
